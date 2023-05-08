@@ -1,8 +1,15 @@
+'''Implementation of the greedy approximation algorithm for 
+the Set Cover problem using lists.'''
+
+
 def diff(l1: list, l2: list) -> None:
     '''Computes the difference between two lists `l1` and 
     `l2` by performing the operation `l1`-`l2` on the list `l1`.'''
     for elem in l2:
-        l1.remove(elem)
+        try:
+            l1.remove(elem)
+        except Exception:
+            pass
 
 
 def elements_covered(set1: list, set2: list) -> int:
