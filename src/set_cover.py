@@ -51,6 +51,19 @@ def print_instance(universe: list, collection: list) -> None:
             print(',')
 
 
+def verification_algorithm(universe: list, collection: list, certificate: list) -> bool:
+    '''Returns true if the given `certificate` is a solution for
+    the given instance of the set cover problem.'''
+    assert len(collection) == len(certificate)
+    u_set = set(universe)
+    proposal_cover = set()
+    for i in range(len(certificate)):
+        if certificate[i]:
+            for element in collection[i]:
+                proposal_cover.add(element)
+    return proposal_cover == u_set
+
+
 u = list(range(30))
 c = create_collection(u)
 print_instance(u, c)
