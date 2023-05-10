@@ -38,13 +38,10 @@ def brute_force_search(universe: list, collection: list) -> list:
     if the element of the `collection` S_i must be in the solution.'''
     power_set = all_subsets(len(collection))
     min_cover = len(collection)
-    best_solution = [True for i in range(len(collection)) if True]
+    best_solution = list(range(len(collection))) 
     for subset in power_set:
-        certificate = [False for i in range(len(collection)) if True]
-        for i in subset:
-            certificate[i] = True
-        if set_cover.verification_algorithm(universe, collection, certificate) and len(subset) < min_cover:
-            best_solution = certificate
+        if set_cover.verification_algorithm(universe, collection, subset) and len(subset) < min_cover:
+            best_solution = subset 
     return best_solution
 
 

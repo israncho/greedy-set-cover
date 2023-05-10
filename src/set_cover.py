@@ -53,21 +53,23 @@ def print_instance(universe: list, collection: list) -> None:
 
 def verification_algorithm(universe: list, collection: list, certificate: list) -> bool:
     '''Returns true if the given `certificate` is a solution for
-    the given instance of the set cover problem.'''
-    assert len(collection) == len(certificate)
+    the given instance of the set cover problem. A certificate is 
+    a list with indices of the subsets of the collection.'''
+    assert len(collection) >= len(certificate)
+    for i in certificate:
+        assert i < len(collection)
     u_set = set(universe)
     proposal_cover = set()
-    for i in range(len(certificate)):
-        if certificate[i]:
-            for element in collection[i]:
-                proposal_cover.add(element)
+    for i in certificate:
+        for element in collection[i]:
+            proposal_cover.add(element)
     return proposal_cover == u_set
 
 
-u = list(range(30))
-c = create_collection(u)
-print_instance(u, c)
-print(has_cover(u, c))
+#u = list(range(30))
+#c = create_collection(u)
+#print_instance(u, c)
+#print(has_cover(u, c))
 
 u_1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
        16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
