@@ -45,4 +45,4 @@ def brute_force_search(universe: list, collection: list) -> list:
     return best_solution
 
 
-print(brute_force_search(set_cover.u_1, set_cover.c_1))
+print(brute_force_search(set_cover.u_1, set_cover.c_2))

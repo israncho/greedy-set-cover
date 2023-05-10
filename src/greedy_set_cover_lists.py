@@ -52,4 +52,4 @@ def greedy_set_cover(universe: list, collection: list) -> list:
     return indexes
 
 
-print(greedy_set_cover(set_cover.u_1, set_cover.c_1))
+print(greedy_set_cover(set_cover.u_1, set_cover.c_2))

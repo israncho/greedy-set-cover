@@ -65,6 +65,7 @@ def verification_algorithm(universe: list, collection: list, certificate: list) 
             proposal_cover.add(element)
     return proposal_cover == u_set
 
+
 '''
 u = list(range(44))
 c = create_collection(u)
@@ -99,9 +100,39 @@ c_1 = [[3, 36, 37, 39, 8, 10, 13, 18, 26, 27],
        [0, 40, 43, 14, 20, 23],
        [32, 0, 2, 36, 38, 43, 14, 19, 20, 25]]
 
+c_2 = [[4, 7, 10, 13, 16, 17, 18, 19, 20, 27],
+       [0, 1, 38, 11, 18, 24, 25, 31],
+       [36, 6, 40, 19, 24, 29],
+       [33, 34, 38, 39, 8, 11, 14, 15, 22],
+       [37, 38, 39, 15, 19, 26, 30],
+       [0, 3, 6, 42, 12, 16, 24],
+       [33, 39, 14, 24, 30],
+       [1, 2, 4, 5, 13, 16, 20, 25],
+       [14],
+       [1, 34, 7, 14, 16, 17, 22, 23],
+       [33, 11],
+       [0, 2, 35, 36, 37, 40, 8, 43, 13],
+       [9, 4, 33, 23],
+       [1, 3, 4, 7, 9, 13, 16, 28],
+       [37, 7, 8, 41, 43, 18, 21, 27, 28],
+       [1, 39, 8, 42, 10, 15, 19, 22, 28],
+       [0, 1, 3, 4, 40, 41, 10, 11, 8, 13, 15],
+       [32, 9, 23],
+       [33, 2, 3, 35, 9, 13, 16, 17],
+       [1, 3, 5, 38],
+       [27],
+       [33, 39, 9, 15, 27],
+       [34, 7, 9, 10, 11, 42, 15, 24],
+       [1, 38, 7, 39, 17]]
+
 solution_1_brute_force = [3, 8, 11, 13, 14, 16, 19, 20, 21, 23]
 solution_1_greedy = [3, 20, 13, 23, 0, 5, 2, 4, 8, 11, 12]
+
+solution_2_brute_force = [1, 2, 4, 5, 7, 9, 14, 17, 18, 22]
+solution_2_greedy = [16, 0, 3, 11, 5, 17, 1, 4, 14, 2, 7]
 
 print(verification_algorithm(u_1, c_1, solution_1_brute_force))
 print(verification_algorithm(u_1, c_1, solution_1_greedy))
 
+print(verification_algorithm(u_1, c_2, solution_2_brute_force))
+print(verification_algorithm(u_1, c_2, solution_2_greedy))
