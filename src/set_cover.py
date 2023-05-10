@@ -7,9 +7,9 @@ import random
 def create_collection(universe: list) -> list:
     '''Returns a collection of subsets of the `universe`.'''
     subsets = []
-    for i in range(15):
+    for i in range(24):
         subset = set()
-        subset_size = random.randint(1, 12)
+        subset_size = random.randint(1, 11)
         while len(subset) < subset_size:
             subset.add(random.choice(universe))
         subsets.append(list(subset))
@@ -65,26 +65,43 @@ def verification_algorithm(universe: list, collection: list, certificate: list) 
             proposal_cover.add(element)
     return proposal_cover == u_set
 
+'''
+u = list(range(44))
+c = create_collection(u)
+print_instance(u, c)
+print(has_cover(u, c))
+'''
 
-#u = list(range(30))
-#c = create_collection(u)
-#print_instance(u, c)
-#print(has_cover(u, c))
+u_1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+       23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43]
+c_1 = [[3, 36, 37, 39, 8, 10, 13, 18, 26, 27],
+       [0, 27, 5],
+       [9, 43, 14, 17, 19, 23],
+       [35, 3, 38, 10, 42, 15, 16, 20, 21, 24, 29],
+       [38, 1, 28, 30],
+       [3, 36, 37, 9, 10, 43, 12, 13, 11, 17],
+       [32, 16],
+       [35, 37, 5, 41, 13],
+       [33, 7],
+       [6, 7, 8, 9, 10, 23, 24, 31],
+       [38, 6, 42, 43, 24, 25],
+       [34, 41, 10, 11, 25, 26],
+       [4, 5, 6, 36, 18, 27],
+       [0, 5, 39, 40, 41, 7, 13, 28],
+       [36, 37, 7, 40, 42, 12, 13, 16, 18, 21, 23],
+       [41, 21, 6],
+       [8, 27, 5, 22],
+       [5],
+       [26, 3, 30],
+       [3, 4, 39, 9, 10, 22],
+       [35, 36, 6, 9, 17, 18, 22, 27, 30, 31],
+       [0, 1, 5],
+       [0, 40, 43, 14, 20, 23],
+       [32, 0, 2, 36, 38, 43, 14, 19, 20, 25]]
 
-u_1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
-       16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
-c_1 = [[9, 17, 19, 21, 23, 27],
-       [7, 12, 15, 18, 21, 22, 25, 27, 29],
-       [1, 8, 11, 13, 15, 17, 20, 23, 26, 27],
-       [7, 9, 16, 23, 27],
-       [16],
-       [2, 5, 7, 9, 11, 20, 21, 22, 24, 28],
-       [3, 5, 6, 7, 8, 9, 11, 15, 26, 28],
-       [1, 8, 9, 11, 23],
-       [1],
-       [5, 7, 8, 11, 18, 19, 27, 28],
-       [2, 7, 13, 14, 18],
-       [4, 6, 9, 10, 11, 13, 15, 18, 20, 22, 25, 28],
-       [4, 6, 8, 10, 19, 20, 22, 24, 25, 28, 29],
-       [0, 14, 19, 22, 23, 24],
-       [2, 8, 12, 14, 15, 21, 25, 29]]
+solution_1_brute_force = [3, 8, 11, 13, 14, 16, 19, 20, 21, 23]
+solution_1_greedy = [3, 20, 13, 23, 0, 5, 2, 4, 8, 11, 12]
+
+print(verification_algorithm(u_1, c_1, solution_1_brute_force))
+print(verification_algorithm(u_1, c_1, solution_1_greedy))
+
