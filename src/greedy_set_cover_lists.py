@@ -1,6 +1,8 @@
 '''Implementation of the greedy approximation algorithm for 
 the Set Cover problem using lists.'''
 
+import set_cover
+
 
 def diff(l1: list, l2: list) -> None:
     '''Computes the difference between two lists `l1` and 
@@ -32,18 +34,22 @@ def maximize_uncovered(uncovered_elems: list, subsets: list) -> int:
     for i in range(len(subsets)):
         s_i_covered = elements_covered(uncovered_elems, subsets[i])
         if s_i_covered > max_covered_elems:
+            max_covered_elems = s_i_covered
             i_max = i
     return i_max
 
 
-def greedy_set_cover(universe: list, subsets: list) -> list:
+def greedy_set_cover(universe: list, collection: list) -> list:
     '''Assuming the input instance is correct, it returns 
     a list with the indices of the subsets that form a 
     cover for the universe.'''
     uncovered_elems = list(universe)
     indexes = []
     while uncovered_elems != []:
-        i_max = maximize_uncovered(uncovered_elems, subsets)
+        i_max = maximize_uncovered(uncovered_elems, collection)
         indexes.append(i_max)
-        diff(uncovered_elems, subsets[i_max])
+        diff(uncovered_elems, collection[i_max])
     return indexes
+
+
+print(greedy_set_cover(set_cover.u_1, set_cover.c_1))
