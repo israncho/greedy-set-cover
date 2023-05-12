@@ -4,12 +4,12 @@ the Set Cover problem using lists.'''
 import set_cover
 
 
-def diff(l1: list, l2: list) -> None:
+def diff(set1: list, set2: list) -> None:
     '''Computes the difference between two lists `l1` and 
     `l2` by performing the operation `l1`-`l2` on the list `l1`.'''
-    for elem in l2:
+    for elem in set2:
         try:
-            l1.remove(elem)
+            set1.remove(elem)
         except Exception:
             pass
 
