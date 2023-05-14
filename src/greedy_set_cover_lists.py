@@ -56,12 +56,16 @@ def greedy_set_cover(universe: list, collection: list) -> list:
 if __name__ == '__main__':
     instance_num = int(sys.argv[1])
     assert instance_num >= 0 and instance_num < len(set_cover.instances), 'The given instance does not exist.'
+
     (u, c, bf_solution) = set_cover.instances[instance_num]
     assert set_cover.correct_instance(u, c)
     assert set_cover.verification_algorithm(u, c, bf_solution)
+
     set_cover.print_instance(u, c)
     greedy_solution = greedy_set_cover(u, c)
+
     assert set_cover.verification_algorithm(u, c, greedy_solution)
+
     print('\n\nGreedy set cover solution:')
     print(greedy_solution, end=', ')
     print('size: ' + str(len(greedy_solution)))
