@@ -1,7 +1,7 @@
 '''Implementation of the brute force search
 algorithm for the Set Cover problem.'''
 
-import set_cover
+from set_cover import verification_algorithm 
 import instances
 
 
@@ -40,9 +40,9 @@ def brute_force_search(universe: list, collection: list) -> list:
     power_set = all_subsets(len(collection))
     best_solution = list(range(len(collection)))  # trivial solution
     for subset in power_set:
-        if set_cover.verification_algorithm(universe, collection, subset) and len(subset) < len(best_solution):
+        if verification_algorithm(universe, collection, subset) and len(subset) < len(best_solution):
             best_solution = subset
     return best_solution
 
 
-print(brute_force_search(instances.u_2, instances.c_5))
+print(brute_force_search(instances.u_3, instances.c_4))

@@ -1,8 +1,10 @@
 '''Implementation of the greedy approximation algorithm for 
 the Set Cover problem using lists.'''
 
-import set_cover
-import instances
+from set_cover import correct_instance
+from set_cover import verification_algorithm
+from set_cover import print_instance
+from instances import lst_instances
 import sys
 
 
@@ -57,16 +59,16 @@ def greedy_set_cover(universe: list, collection: list) -> list:
 if __name__ == '__main__':
     instance_num = int(sys.argv[1])
     assert instance_num >= 0 and instance_num < len(
-        set_cover.instances), 'The given instance does not exist.'
+        lst_instances), 'The given instance does not exist.'
 
-    (u, c, bf_solution) = instances.instances[instance_num]
-    assert set_cover.correct_instance(u, c)
-    assert set_cover.verification_algorithm(u, c, bf_solution)
+    (u, c, bf_solution) = lst_instances[instance_num]
+    assert correct_instance(u, c)
+    assert verification_algorithm(u, c, bf_solution)
 
-    set_cover.print_instance(u, c)
+    print_instance(u, c)
     greedy_solution = greedy_set_cover(u, c)
 
-    assert set_cover.verification_algorithm(u, c, greedy_solution)
+    assert verification_algorithm(u, c, greedy_solution)
 
     print('\n\nGreedy set cover solution:')
     print(greedy_solution, end=', ')
