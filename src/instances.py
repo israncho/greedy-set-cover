@@ -127,15 +127,16 @@ c_5 = [[7, 73, 9, 75, 11, 48, 82, 23],
        [39, 43, 45, 78, 15, 79, 47, 18, 86, 23, 59, 31],
        [32, 65, 68, 17, 52, 24, 59, 61]]
 
-solution_1_brute_force = [0, 3, 4, 8, 11, 12, 14, 20, 23] 
+solution_1_brute_force = [0, 3, 4, 8, 11, 12, 14, 20, 23]
 
-solution_2_brute_force = [0, 1, 2, 3, 4, 5, 7, 11, 14, 17] 
+solution_2_brute_force = [0, 1, 2, 3, 4, 5, 7, 11, 14, 17]
 
-solution_3_brute_force = [1, 3, 5, 7, 8, 13, 15, 17, 18, 19, 20, 22, 23] 
+solution_3_brute_force = [1, 3, 5, 7, 8, 13, 15, 17, 18, 19, 20, 22, 23]
 
-solution_4_brute_force = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19] 
+solution_4_brute_force = [5, 6, 7, 8, 9,
+                          10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 
-solution_5_brute_force = [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16] 
+solution_5_brute_force = [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16]
 
 instances = [(u_1, c_1, solution_1_brute_force),
              (u_1, c_2, solution_2_brute_force),

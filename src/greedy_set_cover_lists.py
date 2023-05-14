@@ -56,7 +56,8 @@ def greedy_set_cover(universe: list, collection: list) -> list:
 
 if __name__ == '__main__':
     instance_num = int(sys.argv[1])
-    assert instance_num >= 0 and instance_num < len(set_cover.instances), 'The given instance does not exist.'
+    assert instance_num >= 0 and instance_num < len(
+        set_cover.instances), 'The given instance does not exist.'
 
     (u, c, bf_solution) = instances.instances[instance_num]
     assert set_cover.correct_instance(u, c)

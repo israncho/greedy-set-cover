@@ -67,6 +67,7 @@ def verification_algorithm(universe: list, collection: list, certificate: list) 
             proposal_cover.add(element)
     return proposal_cover == u_set
 
+
 '''
 u = list(range(88))
 c = create_collection(u)
