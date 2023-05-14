@@ -40,6 +40,8 @@ def correct_instance(universe: list, collection: list) -> bool:
 def print_instance(universe: list, collection: list) -> None:
     '''Prints in console the given instance of 
     the set cover problem.'''
+    print('|U| = ' + str(len(universe)))
+    print('|C| = ' + str(len(collection)))
     print('U = ', end='')
     print(universe)
     print('C = \n[' + str(collection[0]) + ',')
@@ -131,8 +133,4 @@ solution_1_greedy = [3, 20, 13, 23, 0, 5, 2, 4, 8, 11, 12]
 solution_2_brute_force = [1, 2, 4, 5, 7, 9, 14, 17, 18, 22]
 solution_2_greedy = [16, 0, 3, 11, 5, 17, 1, 4, 14, 2, 7]
 
-print(verification_algorithm(u_1, c_1, solution_1_brute_force))
-print(verification_algorithm(u_1, c_1, solution_1_greedy))
-
-print(verification_algorithm(u_1, c_2, solution_2_brute_force))
-print(verification_algorithm(u_1, c_2, solution_2_greedy))
+instances = [(u_1, c_1, solution_1_brute_force), (u_1, c_2, solution_2_brute_force)]
