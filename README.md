@@ -1,19 +1,18 @@
 # Greedy Set Cover
 
-Implementacion del algoritmo de aproximacion para el problema NP-completo SET COVER.
+Implementation of the approximation algorithm for the NP-complete problem SET COVER.
 
 ## Set Cover (Optimizacion)
 
-**EJEMPLAR:** Un conjunto $U$, una coleccion de subconjuntos $C=\{S_0,S_1,...,S_m\}$ 
-tal que
+**INSTANCE:** A set $U$, a collection of subsets $C={S_0,S_1,...,S_m}$ such that
 $$\bigcup^m_{i = 1} S_i = U$$
 
-**PROBLEMA:** $C'\subseteq C$ tal que cada elemento de $U$ pertenece al menos a un miembro de $C'$
-y $|C'|$ es la menor posible.
+**PROBLEM:** Find $C'\subseteq C$ such that each element in $U$ belongs to at least one member of $C'$
+and $|C'|$ is minimized. 
 
-## Ejecucion 
+## Execution 
 
-El argumento del comando el ejemplar con el cual se ejecutara el algoritmo.
+The argument for the command is the instance with which the algorithm will be executed.
 
 ```bash
 python3 src/greedy_set_cover_lists.py 0
