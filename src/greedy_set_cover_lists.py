@@ -2,6 +2,7 @@
 the Set Cover problem using lists.'''
 
 import set_cover
+import instances
 import sys
 
 
@@ -57,7 +58,7 @@ if __name__ == '__main__':
     instance_num = int(sys.argv[1])
     assert instance_num >= 0 and instance_num < len(set_cover.instances), 'The given instance does not exist.'
 
-    (u, c, bf_solution) = set_cover.instances[instance_num]
+    (u, c, bf_solution) = instances.instances[instance_num]
     assert set_cover.correct_instance(u, c)
     assert set_cover.verification_algorithm(u, c, bf_solution)
 

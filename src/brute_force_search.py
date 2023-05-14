@@ -2,6 +2,7 @@
 algorithm for the Set Cover problem.'''
 
 import set_cover
+import instances
 
 
 def all_subsets(n: int) -> list:
@@ -44,4 +45,4 @@ def brute_force_search(universe: list, collection: list) -> list:
     return best_solution
 
 
-print(brute_force_search(set_cover.u_2, set_cover.c_5))
+print(brute_force_search(instances.u_2, instances.c_5))
