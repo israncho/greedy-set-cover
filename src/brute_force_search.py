@@ -37,12 +37,11 @@ def brute_force_search(universe: list, collection: list) -> list:
     `universe`. Returns a boolean list `solution` where `solution[i] = True` 
     if the element of the `collection` S_i must be in the solution.'''
     power_set = all_subsets(len(collection))
-    min_cover = len(collection)
-    best_solution = list(range(len(collection))) 
+    best_solution = list(range(len(collection))) # trivial solution
     for subset in power_set:
-        if set_cover.verification_algorithm(universe, collection, subset) and len(subset) < min_cover:
-            best_solution = subset 
+        if set_cover.verification_algorithm(universe, collection, subset) and len(subset) < len(best_solution):
+            best_solution = subset
     return best_solution
 
 
-print(brute_force_search(set_cover.u_1, set_cover.c_2))
+print(brute_force_search(set_cover.u_2, set_cover.c_5))
