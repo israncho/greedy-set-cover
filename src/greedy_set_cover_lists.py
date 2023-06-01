@@ -69,6 +69,7 @@ if __name__ == '__main__':
     greedy_solution = greedy_set_cover(u, c)
 
     assert verification_algorithm(u, c, greedy_solution)
+    assert verification_algorithm(u, c, bf_solution)
 
     print('\n\nGreedy set cover solution:')
     print(greedy_solution, end=', ')
