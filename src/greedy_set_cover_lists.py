@@ -62,7 +62,7 @@ if __name__ == '__main__':
     assert instance_num >= 0 and instance_num < len(
         lst_instances), 'The given instance does not exist.'
 
-    (u, c, bf_solution) = lst_instances[instance_num]
+    (u, c, bf_solution, bf_runtime) = lst_instances[instance_num]
     assert correct_instance(u, c)
     assert verification_algorithm(u, c, bf_solution)
 
@@ -78,7 +78,8 @@ if __name__ == '__main__':
     print('\n\nGreedy set cover solution:')
     print(greedy_solution, end=', ')
     print('size: ' + str(len(greedy_solution)))
-    print('elapsed time: ', elapsed_time, ' secs')
+    print('runtime: ', elapsed_time, ' secs')
     print('\nBrute force solution:')
     print(bf_solution, end=', ')
     print('size: ' + str(len(bf_solution)))
+    print('runtime: ', bf_runtime, ' secs')

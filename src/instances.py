@@ -138,8 +138,8 @@ solution_4_brute_force = [5, 6, 7, 8, 9,
 
 solution_5_brute_force = [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16]
 
-lst_instances = [(u_1, c_1, solution_1_brute_force),
-             (u_1, c_2, solution_2_brute_force),
-             (u_2, c_3, solution_3_brute_force),
-             (u_3, c_4, solution_4_brute_force),
-             (u_2, c_5, solution_5_brute_force)]
+lst_instances = [(u_1, c_1, solution_1_brute_force, 136.03396606445312),
+             (u_1, c_2, solution_2_brute_force, 143.3997619152069),
+             (u_2, c_3, solution_3_brute_force, 206.6566891670227),
+             (u_3, c_4, solution_4_brute_force, 4.008603811264038),
+             (u_2, c_5, solution_5_brute_force, 103.850515127182)]

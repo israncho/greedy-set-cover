@@ -1,8 +1,13 @@
 '''Implementation of the brute force search
 algorithm for the Set Cover problem.'''
 
-from set_cover import verification_algorithm 
+from set_cover import verification_algorithm
+from instances import lst_instances
+from set_cover import correct_instance
+from set_cover import print_instance
 import instances
+import sys
+import time
 
 
 def all_subsets(n: int) -> list:
@@ -45,4 +50,20 @@ def brute_force_search(universe: list, collection: list) -> list:
     return best_solution
 
 
-print(brute_force_search(instances.u_3, instances.c_4))
+if __name__ == '__main__':
+    instance_num = int(sys.argv[1])
+    assert instance_num >= 0 and instance_num < len(
+        lst_instances), 'The given instance does not exist.'
+
+    (u, c, bf_solution, bf_time) = lst_instances[instance_num]
+    assert correct_instance(u, c)
+    print_instance(u, c)
+    print('\nsaved: ', bf_solution)
+    print('elapsed time: ', bf_time, ' secs')
+
+    start = time.time()
+    brute_force_solution = brute_force_search(u, c)
+    end = time.time()
+    elapsed_time = end - start
+    print('\n\ncurrent: ', brute_force_solution)
+    print('elapsed time: ', elapsed_time, ' secs')
