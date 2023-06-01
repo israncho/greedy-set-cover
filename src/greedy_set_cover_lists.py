@@ -6,6 +6,7 @@ from set_cover import verification_algorithm
 from set_cover import print_instance
 from instances import lst_instances
 import sys
+import time
 
 
 def diff(set1: list, set2: list) -> None:  # O(|s2|*|s1|)
@@ -66,7 +67,10 @@ if __name__ == '__main__':
     assert verification_algorithm(u, c, bf_solution)
 
     print_instance(u, c)
+    start = time.time()
     greedy_solution = greedy_set_cover(u, c)
+    end = time.time()
+    elapsed_time = end - start
 
     assert verification_algorithm(u, c, greedy_solution)
     assert verification_algorithm(u, c, bf_solution)
@@ -74,6 +78,7 @@ if __name__ == '__main__':
     print('\n\nGreedy set cover solution:')
     print(greedy_solution, end=', ')
     print('size: ' + str(len(greedy_solution)))
+    print('elapsed time: ', elapsed_time, ' secs')
     print('\nBrute force solution:')
     print(bf_solution, end=', ')
     print('size: ' + str(len(bf_solution)))
